@@ -1,0 +1,167 @@
+.svg-hills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  z-index: 0;
+}
+
+.svg-hills__landscape {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.topology {
+  fill: none;
+  stroke-width: 0.75px;
+  stroke-miterlimit: 10;
+  stroke: #282826;
+}
+
+.topology--wireframe {
+  stroke-width: 2px;
+}
+
+.topology--no-width {
+  stroke-width: none;
+}
+
+.topology--width-1 {
+  stroke-width: 2px;
+}
+
+.topology--width-2 {
+  stroke-width: 2px;
+}
+
+.topology--color-1 {
+  fill: var(--top-color-1);
+}
+
+.topology--color-2 {
+  fill: var(--top-color-2);
+}
+
+.topology--color-3 {
+  fill: var(--top-color-3);
+}
+
+.topology--color-4 {
+  fill: var(--top-color-4);
+}
+
+.topology--color-5 {
+  fill: var(--top-color-5);
+}
+
+.topology--color-6 {
+  fill: var(--top-color-6);
+}
+
+.topology--color-7 {
+  fill: var(--top-color-7);
+}
+
+.topology--color-8 {
+  fill: var(--top-color-8);
+}
+
+.topology--color-9 {
+  fill: var(--top-color-9);
+}
+
+.topology--color-10 {
+  fill: var(--top-color-10);
+}
+
+.topology--color-11 {
+  fill: var(--top-color-11);
+}
+
+.topology--color-12 {
+  fill: var(--top-color-12);
+}
+
+.topology--color-13 {
+  fill: var(--top-color-13);
+}
+
+.topology--color-14 {
+  fill: var(--top-color-14);
+}
+
+.topology--color-15 {
+  fill: var(--top-color-15);
+}
+
+.topology--color-16 {
+  fill: var(--top-color-16);
+}
+
+.topology--color-17 {
+  fill: var(--top-color-17);
+}
+
+.topology--color-18 {
+  fill: var(--top-color-18);
+}
+
+.topology--color-19 {
+  fill: var(--top-color-19);
+}
+
+.topology--color-20 {
+  fill: var(--top-color-20);
+}
+
+.topology--color-21 {
+  fill: var(--top-color-21);
+}
+
+.topology--color-22 {
+  fill: var(--top-color-22);
+}
+
+.topology--color-23 {
+  fill: var(--top-color-23);
+}
+
+.topology--color-24 {
+  fill: var(--top-color-24);
+}
+
+.topology--color-25 {
+  fill: var(--top-color-25);
+}
+
+@media screen and (min-width: 0px) {
+  .svg-hills__landscape {
+    width: 1280px;
+  }
+}
+
+@media screen and (min-height: 0px) {
+  .svg-hills__landscape {
+    bottom: -10%;
+  }
+}
+
+@media screen and (min-height: 320px) {
+  .svg-hills__landscape {
+    bottom: -5%;
+  }
+}
+
+@media screen and (min-height: 720px) {
+  .svg-hills__landscape {
+    bottom: 0%;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .svg-hills__landscape {
+    width: 100%;
+  }
+}

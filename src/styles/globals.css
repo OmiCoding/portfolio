@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+.main {
+  width: 100%;
+}
+
+.main {
+  position: relative;
+  min-height: 100vh;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-color-1);
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+:root {
+  --bg-color-1: #e8d5ba;
+  --bg-color-2: #282826;
+  --sphere-color: #ed2541;
+  --top-color-1: #6b4e72;
+  --top-color-2: #73527a;
+  --top-color-3: #78557f;
+  --top-color-4: #815a88;
+  --top-color-5: #8a5f92;
+  --top-color-6: #8e6195;
+  --top-color-7: #906297;
+  --top-color-8: #95649c;
+  --top-color-9: #9866a0;
+  --top-color-10: #9a67a2;
+  --top-color-11: #9b68a3;
+  --top-color-12: #a168a4;
+  --top-color-13: #a9619a;
+  --top-color-14: #b05b91;
+  --top-color-15: #b75587;
+  --top-color-16: #be4f7e;
+  --top-color-17: #cc436c;
+  --top-color-18: #c9456f;
+  --top-color-19: #d8375c;
+  --top-color-20: #de3255;
+  --top-color-21: #df3153;
+  --top-color-22: #e32e4e;
+  --top-color-23: #e72a49;
+  --top-color-24: #ed2541;
+  --top-color-25: #d8385d;
+}
