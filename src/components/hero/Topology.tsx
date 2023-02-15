@@ -1,4 +1,5 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
+import { gsap } from 'gsap';
 import AppContext from '../../context/AppContext';
 import useResize from '../../hooks/useResize';
 
