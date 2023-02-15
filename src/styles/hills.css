@@ -1,0 +1,20 @@
+#hill_ap,
+#hill_aq,
+#hill_as,
+#mid_hill-1 {
+  transform: translateY(20px);
+}
+
+#mid_hill-1 {
+  transform: translateY(5px);
+}
+
+.patch-1 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: var(--top-color-2);
+  z-index: -1;
+}
