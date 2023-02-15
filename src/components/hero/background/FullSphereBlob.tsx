@@ -1,8 +1,17 @@
+import { useContext, useRef } from 'react';
+
 import '../../../styles/sphere.css';
+import AppContext from '../../../context/AppContext';
+import useSphereAnim from '../../../hooks/useSphereAnim';
 
 const FullSphere = function () {
+  const { device } = useContext(AppContext);
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  useSphereAnim(device, svgRef);
+
   return (
-    <svg className="sphere" viewBox="0 0 255.6 342.2">
+    <svg ref={svgRef} className="sphere" viewBox="0 0 255.6 342.2">
       <g id="Sphere">
         <path
           id="origin"
