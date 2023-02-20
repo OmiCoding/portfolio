@@ -31,7 +31,7 @@ const FullSphereBlob = function () {
 		C140.3,29.5,111.5,28.5,114.2,25.2z"
         />
       </g>
-      <g id="Sphere">
+      <g id="blobs">
         <g id="base-core" className="sphere__core">
           <path
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"

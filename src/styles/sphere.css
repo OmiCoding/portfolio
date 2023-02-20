@@ -27,12 +27,12 @@
 }
 
 #upper-sphere-lines {
-  transform: translate(2px, 72px);
+  transform: translate(2px, 28px);
   opacity: 0;
 }
 
 #bottom-sphere-lines {
-  transform: translate(2px, 41px);
+  transform: translate(2px, -3px);
 }
 
 #bottom-sphere-lines {
@@ -44,6 +44,7 @@
 }
 
 .sphere__core {
+  opacity: 0;
 }
 
 .sphere__goo {
