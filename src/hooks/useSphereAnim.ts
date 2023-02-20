@@ -14,7 +14,6 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
       gsap.set('.sphere--lines-1', {
         drawSVG: 0,
       });
-
       gsap.set('.sphere--lines-2', {
         drawSVG: 0,
       });
@@ -24,14 +23,22 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
       });
 
       if (device === 'desktop') {
-        tl.current = gsap
-          .timeline()
-          .to('.sphere__origin', {
+        tl.current = gsap.timeline();
+
+        tl.current
+          .add(init())
+          .add(morphHalves())
+          .add(addLines())
+          .add(splitHalves())
+          .add(blob());
+
+        function init() {
+          const tl = gsap.timeline();
+          tl.to('.sphere__origin', {
             translateY: 0,
             duration: 3,
             ease: 'elastic.out(1, 0.4)',
-          })
-          .to(
+          }).to(
             '.sphere__origin',
             {
               onComplete: () => {
@@ -51,26 +58,47 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
               ease: 'elastic.out(0.75, 1)',
             },
             '-=100%',
-          )
-          .to('#upper-blob', {
+          );
+          return tl;
+        }
+
+        function morphHalves() {
+          const tl = gsap.timeline();
+          tl.to('#upper-blob', {
             delay: 0.02,
-            duration: 0.75,
+            duration: 2,
             ease: 'elastic.out(1,1)',
             translateX: 2,
             translateY: 72,
             morphSVG: upperBlob,
           })
-          .to(
-            '#lower-blob',
-            {
-              delay: 0.02,
-              duration: 0.75,
-              ease: 'elastic.out(1,1)',
-              morphSVG: lowerBlob,
-            },
-            '-=100%',
-          )
-          .to('#upper-sphere-lines', {
+            .to(
+              '#lower-blob',
+              {
+                delay: 0.02,
+                duration: 2,
+                ease: 'elastic.out(1, 1)',
+                morphSVG: lowerBlob,
+              },
+              '-=100%',
+            )
+            .to(
+              '#blobs',
+              {
+                translateY: -44,
+                delay: 0.02,
+                duration: 2,
+                ease: 'elastic.out(1.5, 0.25)',
+              },
+              '-=100%',
+            );
+          return tl;
+        }
+
+        function addLines() {
+          const tl = gsap.timeline();
+
+          tl.to('#upper-sphere-lines', {
             opacity: 1,
             duration: 0.01,
             onComplete: () => {
@@ -78,7 +106,6 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
                 drawSVG: '100%',
                 duration: 0.75,
               });
-
               gsap.to('.sphere--lines-2', {
                 drawSVG: '100%',
                 duration: 0.75,
@@ -90,28 +117,99 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
               });
             },
           })
-          .to(
-            ['#a-shapes', '#inner-a-shapes', '#b-shape-1'],
-            {
-              opacity: 1,
-              delay: 1,
+            .to(
+              ['#a-shapes', '#inner-a-shapes', '#b-shape-1'],
+              {
+                opacity: 1,
+                delay: 1,
+                duration: 1,
+                ease: 'elastic.out(1,1)',
+              },
+              '-=100%',
+            )
+            .to(
+              '#a-shape-1',
+              {
+                opacity: 1,
+                duration: 0.05,
+              },
+              '-=100%',
+            )
+            .to(
+              '#a-shape-2',
+              {
+                opacity: 1,
+                duration: 0.05,
+              },
+              '-=100%',
+            );
+
+          return tl;
+        }
+
+        function splitHalves() {
+          const tl = gsap.timeline({
+            defaults: {
+              ease: 'elastic.out(2, 1)',
               duration: 1,
-              ease: 'elastic.out(1,1)',
             },
-            '-=100%',
-          )
-          .to(
-            '#a-shape-1',
-            {
-              opacity: 1,
-              duration: 0.05,
-            },
-            '-=100%',
-          )
-          .to('#a-shape-2', {
-            opacity: 1,
-            duration: 0.05,
           });
+
+          tl.to('#upper-blob', {
+            translateY: 45,
+          })
+            .to(
+              '#a-shapes',
+              {
+                translateY: 2,
+              },
+              '-=100%',
+            )
+            .to(
+              '#upper-sphere-lines',
+              {
+                translateY: 2,
+              },
+              '-=100%',
+            )
+            .to(
+              '#inner-a-shapes',
+              {
+                translateY: 2,
+              },
+              '-=100%',
+            )
+            .to(
+              '#lower-blob',
+              {
+                translateY: 40,
+              },
+              '-=100%',
+            )
+            .to(
+              '#bottom-sphere-lines',
+              {
+                translateY: 36,
+              },
+              '-=100%',
+            )
+            .to(
+              '#base-core',
+              {
+                opacity: 1,
+                translateY: 42,
+                duration: 1,
+              },
+              '<',
+            );
+          return tl;
+        }
+
+        function blob() {
+          const tl = gsap.timeline();
+
+          return tl;
+        }
       }
     }, ref);
 

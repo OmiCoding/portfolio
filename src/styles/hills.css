@@ -18,13 +18,13 @@
 }
 
 #a-shapes {
-  transform: translate(2px, 71px);
+  transform: translate(2px, 28px);
   opacity: 0;
 }
 
 #inner-a-shapes {
   opacity: 0;
-  transform: translate(2px, 72px);
+  transform: translate(2px, 28px);
 }
 
 #b-shape-1 {
