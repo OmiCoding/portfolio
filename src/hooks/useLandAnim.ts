@@ -5,26 +5,51 @@ const useLandAnim = function (device: string, ref: RefObject<SVGSVGElement>) {
   const tl = useRef<GSAPTimeline>();
 
   useLayoutEffect(() => {
+    if (device === 'desktop') {
+      gsap.to('.svg-hills__landscape', {
+        translateY: 28,
+        duration: 3,
+        ease: 'elastic.out(1, 1)',
+        onComplete: () => {
+          gsap.to('.svg-hills__landscape', {
+            translateY: 0,
+          });
+        },
+      });
+
+      gsap.to('.patch-1', {
+        translateY: 0,
+        duration: 5,
+      });
+    }
+  }, [device]);
+
+  useLayoutEffect(() => {
     let ctx = gsap.context(() => {
       if (device === 'desktop') {
         tl.current = gsap
           .timeline({
-            repeat: -1,
             repeatDuration: 3,
+            delay: 3,
             defaults: {
               duration: 3,
               ease: 'elastic.out(2, 0.3)',
-              translateY: 10,
             },
           })
           .to('#hill_ap', {
             translateY: 10,
           })
-          .to('#hill_aq', {}, '-=96%')
+          .to(
+            '#hill_aq',
+            {
+              translateY: 15,
+            },
+            '-=96%',
+          )
           .to(
             '#hill_as',
             {
-              translateY: 19,
+              translateY: 15,
               ease: 'elastic.out(2, 0.4)',
             },
             '-=97%',
@@ -32,9 +57,23 @@ const useLandAnim = function (device: string, ref: RefObject<SVGSVGElement>) {
           .to(
             '#mid_hill-1',
             {
-              translateY: 4,
+              translateY: 3,
             },
             '-=99%',
+          )
+          .to(
+            '#right-hill-group',
+            {
+              translateY: 2,
+            },
+            '-=100%',
+          )
+          .to(
+            '#back-hill-topology',
+            {
+              translateY: 0,
+            },
+            '-=100%',
           );
       }
     }, ref);
