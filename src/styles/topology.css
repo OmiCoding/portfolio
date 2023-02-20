@@ -164,4 +164,8 @@
   .svg-hills__landscape {
     width: 100%;
   }
+
+  .svg-hills__landscape {
+    transform: translateY(600px);
+  }
 }

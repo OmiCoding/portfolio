@@ -9,6 +9,28 @@
   transform: translateY(5px);
 }
 
+#right-hill-group {
+  transform: translateY(5px);
+}
+
+#back-hill-topology {
+  transform: translateY(3px);
+}
+
+#a-shapes {
+  transform: translate(2px, 71px);
+  opacity: 0;
+}
+
+#inner-a-shapes {
+  opacity: 0;
+  transform: translate(2px, 72px);
+}
+
+#b-shape-1 {
+  opacity: 0;
+}
+
 .patch-1 {
   position: absolute;
   bottom: 0;
@@ -17,4 +39,5 @@
   height: 100px;
   background-color: var(--top-color-2);
   z-index: -1;
+  transform: translateY(100px);
 }
