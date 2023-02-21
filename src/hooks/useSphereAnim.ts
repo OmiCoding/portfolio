@@ -36,8 +36,6 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
           .add(splitHalves())
           .add(blobs(), '-=98%');
 
-        // hover();
-
         function init() {
           const tl = gsap.timeline();
           tl.to('.sphere__origin', {
