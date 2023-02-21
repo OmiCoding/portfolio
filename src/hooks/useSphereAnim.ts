@@ -34,9 +34,7 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
           .add(morphHalves())
           .add(addLines())
           .add(splitHalves())
-          .add(blobs());
-
-        // hover();
+          .add(blobs(), '-=98%');
 
         function init() {
           const tl = gsap.timeline();
