@@ -12,21 +12,55 @@ const FullSphereBlob = function () {
 
   return (
     <svg ref={svgRef} className="sphere" viewBox="0 0 255.6 342.2">
+      <filter id="blur-core">
+        <feGaussianBlur
+          in="SourceGraphic"
+          stdDeviation="5"
+          result="core-blur"
+        />
+        <feColorMatrix
+          in="core-blur"
+          type="matrix"
+          result="core-colors"
+          values="1 0 0 0 0 
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10"
+        />
+        <feComposite in="SourceGraphic" in2="core-colors" operator="atop" />
+      </filter>
+      <filter id="blur-btn">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="btn-blur" />
+        <feColorMatrix
+          in="btn-blur"
+          type="matrix"
+          result="btn-colors"
+          values="1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 20 -10"
+        />
+        <feComposite in="SourceGraphic" in2="btn-colors" operator="atop" />
+      </filter>
+      <path
+        id="path"
+        d="M8,102 C15,83 58,25 131,24 206,24 233,63 259,91 292,125 328,155 377,155 464,155 497,97 504,74"
+      />
       <g id="a-shapes">
         <path
           id="a-shape-5"
-          className="sphere__shapes sphere--color sphere--stroke sphere--width-4"
+          className="sphere__shapes sphere--color sphere--stroke sphere--width-5"
           d="M60.5,39c2.1-5.7,4.1-15.8,7.1-16.1c3.3-0.4,11.2,5.3,13.5,8.7C84.7,36.7,57.2,47.9,60.5,39z"
         />
         <path
           id="a-shape-4"
-          className="sphere__shapes sphere--color sphere--stroke sphere--width-4"
+          className="sphere__shapes sphere--color sphere--stroke sphere--width-5"
           d="M87.1,30.4c2.1-5.7,6.8-10.4,9.8-10.8c3.3-0.4,8.5-0.1,10.9,3.3
 		C111.3,28.1,83.8,39.3,87.1,30.4z"
         />
         <path
           id="a-shape-3"
-          className="sphere__shapes sphere--color sphere--stroke sphere--width-4"
+          className="sphere__shapes sphere--color sphere--stroke sphere--width-5"
           d="M114.2,25.2c4.5-5.5,10.6-12.9,14.1-12.7c3.3,0.2,6.1,8.6,8.4,11.9
 		C140.3,29.5,111.5,28.5,114.2,25.2z"
         />
@@ -39,39 +73,46 @@ const FullSphereBlob = function () {
 		c-32.6-43.4-55.1,23.4-89.2,7.8C-0.2,192,4.2,215,8.8,237.4C11.9,252.6,58.2,300.3,121.1,299.6z"
           />
           <circle
+            id="blob-1"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             cx="28.3"
             cy="184.1"
-            r="3.5"
+            r="6.5"
           />
           <circle
+            id="blob-4"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             cx="166.5"
             cy="197"
-            r="3.5"
+            r="6.5"
           />
           <path
+            id="blob-5"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             d="M221,200.6c-3-0.5-3.1-3-2.6-6s3.7-7.3,6.7-6.8c3,0.5,5,3.3,4.5,6.3C229.1,197,224,201,221,200.6z"
           />
           <circle
+            id="blob-7"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             cx="245.1"
             cy="198.2"
-            r="4.2"
+            r="6.2"
           />
           <circle
+            id="blob-6"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             cx="236.9"
             cy="182.9"
-            r="4.2"
+            r="6.2"
           />
           <path
+            id="blob-3"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             d="M153.1,208.1c-0.4-2.5,1.1-3.9,3.6-4.3s7.6,1.1,8.7,3.7c1.4,3.1-0.9,5.7-4.1,5.6
 		C157.8,212.9,153.5,210.6,153.1,208.1z"
           />
           <path
+            id="blob-2"
             className="sphere__goo sphere--goo-color sphere--stroke  sphere-width-1"
             d="M37.2,205.5c-5.2-2-3.3-7.4-0.6-11.1c1.5-2.2,5.5-8.2,10.7-5.6c4.2,2.1,3.3,6.1,1,10.9
 		C46.5,203.2,40.9,206.9,37.2,205.5z"
@@ -79,19 +120,19 @@ const FullSphereBlob = function () {
         </g>
         <path
           id="origin"
-          className="sphere__origin sphere--stroke sphere--color sphere-width-1"
+          className="sphere__origin sphere--stroke sphere--color sphere--width-5"
           d="M240.1,207.8c0,64.6-52.3,116.9-116.9,116.9S6.4,272.4,6.4,207.8S58.7,90.9,123.2,90.9
 		S240.1,143.3,240.1,207.8C240.1,207.8,240.1,207.8,240.1,207.8z"
         />
         <g id="split" className="sphere__split  sphere--hide">
           <path
             id="lower-blob"
-            className="sphere--stroke sphere--color sphere-width-1"
+            className="sphere--stroke sphere--color sphere--width-5"
             d="M6.2,208.9c0.1,64.6,52.6,116.8,117.2,116.6c63-0.1,114.6-50.2,116.6-113.2C203.7,236.1,6.2,204,6.2,208.9z"
           />
           <path
             id="upper-blob"
-            className="sphere--stroke sphere--color sphere-width-1"
+            className="sphere--stroke sphere--color sphere--width-5"
             d="M123.6,89.9C59.1,89.9,6.2,144.3,6.2,208.9c0,43.2,224.6,47.3,233.7,3.5c0-1.1,0.4-5,0.4-6.2
 			c0.1-64-51.7-116.1-115.7-116.2C124.3,89.9,123.9,89.9,123.6,89.9z"
           />
