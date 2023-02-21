@@ -45,6 +45,7 @@
 
 .sphere__core {
   opacity: 0;
+  filter: url('#blur-core');
 }
 
 .sphere__goo {
@@ -90,11 +91,21 @@
 }
 
 .sphere--width-5 {
-  stroke-width: 1.4px;
+  stroke-width: 2px;
+}
+
+.sphere--width-6 {
+  stroke-width: 2px;
 }
 
 .sphere--hide {
   opacity: 0;
+}
+
+#path {
+  stroke-width: 2;
+  stroke: black;
+  fill: none;
 }
 
 @media screen and (min-width: 0px) and (orientation: portrait) and (max-height: 619px) {
