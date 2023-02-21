@@ -102,9 +102,12 @@
   opacity: 0;
 }
 
-#path {
-  stroke-width: 2;
-  stroke: black;
+#path2,
+#path3,
+#path4,
+#path5,
+#path6,
+#path7 {
   fill: none;
 }
 

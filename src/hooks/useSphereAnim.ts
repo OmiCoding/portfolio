@@ -3,27 +3,17 @@ import { gsap } from 'gsap';
 import { MorphSVGPlugin } from 'gsap/MorphSVGPlugin';
 import { DrawSVGPlugin } from 'gsap/DrawSVGPlugin';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { MotionPathHelper } from 'gsap/MotionPathHelper';
 
 gsap.registerPlugin(MorphSVGPlugin);
 gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(MotionPathHelper);
 
 const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
   const tl = useRef<GSAPTimeline>();
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      gsap.to('#blob-2', {
-        duration: 12,
-        motionPath: {
-          path: '#path',
-          align: '#path',
-        },
-      });
-
-      MotionPathHelper.create('#blob-2');
+      // MotionPathHelper.create('#blob-2');
 
       gsap.set('.sphere--lines-1', {
         drawSVG: 0,
@@ -43,8 +33,8 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
           .add(init())
           .add(morphHalves())
           .add(addLines())
-          .add(splitHalves());
-        // .add(blobs());
+          .add(splitHalves())
+          .add(blobs());
 
         // hover();
 
@@ -242,7 +232,7 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
               '#base-core',
               {
                 opacity: 1,
-                translateY: 39,
+                translateY: 42,
                 duration: 1,
               },
               '<',
@@ -264,70 +254,83 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
             ease: 'none',
             motionPath:
               'M6.94,3.4C-3.89,8.82-1.62,15.77,12.68,29c6.79,6.26,22-7.75,17.74-15.66C24.16,1.84,21.55-3.9,6.94,3.4Z',
-          }).to(
-            '#blob-2',
-            {
-              duration: 5,
-            },
-            '<',
-          );
+          })
+            .to(
+              '#blob-2',
+              {
+                duration: 12,
+                motionPath: {
+                  path: '#path2',
+                  align: '#path2',
+                },
+              },
+              '<',
+            )
+            .to(
+              '#blob-3',
+              {
+                duration: 12,
+                scale: 1.5,
+                motionPath: {
+                  path: '#path3',
+                  align: '#path3',
+                },
+              },
+              '<',
+            )
+            .to(
+              '#blob-4',
+              {
+                duration: 8,
+                scale: 1.2,
+                motionPath: {
+                  path: '#path4',
+                  align: '#path4',
+                  start: 1,
+                  end: 0,
+                },
+              },
+              '<',
+            )
+            .to(
+              '#blob-5',
+              {
+                duration: 15,
+                scale: 1.5,
+                motionPath: {
+                  path: '#path5',
+                  align: '#path5',
+                },
+              },
+              '<',
+            )
+            .to(
+              '#blob-6',
+              {
+                duration: 18,
+                motionPath: {
+                  path: '#path6',
+                  align: '#path6',
+                  start: 1,
+                  end: 0,
+                },
+              },
+              '<',
+            )
+            .to(
+              '#blob-7',
+              {
+                duration: 18,
+                motionPath: {
+                  path: '#path7',
+                  align: '#path7',
+                },
+              },
+              '<',
+            );
 
           return tl;
         }
-
-        // function hover() {
-        //   const tl = gsap.timeline({
-        //     repeat: -1,
-        //     delay: 10,
-        //     yoyo: true,
-        //     defaults: {
-        //       ease: 'none',
-        //       delay: 0,
-        //       duration: 5,
-        //     },
-        //   });
-
-        //   tl.to('#upper-blob', {
-        //     translateY: 44,
-        //   })
-        //     .to(
-        //       '#upper-sphere-lines',
-        //       {
-        //         translateY: 1,
-        //       },
-        //       '<',
-        //     )
-        //     .to(
-        //       '#a-shapes',
-        //       {
-        //         translateY: 2,
-        //       },
-        //       '<',
-        //     )
-        //     .to(
-        //       '#inner-a-shapes',
-        //       {
-        //         translateY: 2,
-        //       },
-        //       '<',
-        //     )
-        //     .to(
-        //       '#lower-blob',
-        //       {
-        //         translateY: 44.5,
-        //       },
-        //       '<',
-        //     )
-        //     .to(
-        //       '#bottom-sphere-lines',
-        //       {
-        //         translateY: 39.5,
-        //       },
-        //       '<',
-        //     );
-
-        //   return tl;
-        // }
       }
     }, ref);
 
