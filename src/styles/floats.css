@@ -1,0 +1,9 @@
+#group-a-shapes,
+#group-b-shapes,
+#group-c-shapes,
+#group-d-shapes,
+#group-e-shapes,
+#group-f-shapes {
+  opacity: 0;
+  transform: translateY(-20px);
+}

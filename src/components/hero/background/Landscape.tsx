@@ -1,14 +1,19 @@
 import { useContext, useRef } from 'react';
 import AppContext from '../../../context/AppContext';
 import useLandAnim from '../../../hooks/useLandAnim';
+import useGroupAnim from '../../../hooks/useGroupAnim';
+
 import '../../../styles/topology.css';
 import '../../../styles/hills.css';
+import '../../../styles/floats.css';
 
 const Landscape = function () {
   const { device } = useContext(AppContext);
   const svgRef = useRef<SVGSVGElement>(null);
+  const groupARef = useRef<SVGSVGElement>(null);
 
   useLandAnim(device, svgRef);
+  useGroupAnim(device, groupARef);
 
   return (
     <svg
@@ -2117,7 +2122,7 @@ const Landscape = function () {
           d="M714.89,500.47c10.4-5,14.1-7,28.4-15.1,11.2-6.3,21.4-22.2,27.9-23,3.7-.4,14.2,8.8,16.7,16.7,5.6,17.6,15.1-3.1,18.3-2.6,4.4.7,6.5,11,19,8.9,3.6-.6,4.1,15.1,8.1,15.9,2.5.5,12-17.2,14.9-12.5,5.4,8.9,17.3,15,17.7,16.4"
         />
       </g>
-      <g id="Group_F_Shapes" data-name="Group F Shapes">
+      <g id="group-f-shapes" data-name="Group F Shapes">
         <g>
           <path
             className="topology topology--width-1 topology--color-5"
@@ -2169,7 +2174,7 @@ const Landscape = function () {
           d="M1777.37,131.93c0,3-.27,6.94-3.27,6.94s-6.63-4.5-6.63-7.5a5.43,5.43,0,0,1,5.43-5.43C1775.9,125.94,1777.37,128.93,1777.37,131.93Z"
         />
       </g>
-      <g id="Group_E_Shapes" data-name="Group E Shapes">
+      <g id="group-e-shapes" data-name="Group E Shapes">
         <g>
           <polygon
             className="topology topology--width-1 topology--color-4"
@@ -2229,7 +2234,7 @@ const Landscape = function () {
           d="M1578.59,214.1c0,3-.27,7-3.27,7s-6.63-4.51-6.63-7.51a5.43,5.43,0,0,1,5.43-5.43C1577.12,208.11,1578.59,211.1,1578.59,214.1Z"
         />
       </g>
-      <g id="Group_D_Shapes" data-name="Group D Shapes">
+      <g id="group-d-shapes" data-name="Group D Shapes">
         <path
           className="topology topology--width-1 topology--color-5"
           d="M1285.12,175.09c-3.28,3.46-3.49,8.91-1.09,11.08,2.19,2,8.11,2.12,11,4.15,3.77,2.64,6.74,8,11.23,7.72s8.74-4.85,7.38-11.08c-1.1-5-6.54-10.13-12.14-12.64C1297.1,172.34,1289.08,170.92,1285.12,175.09Z"
@@ -2291,7 +2296,7 @@ const Landscape = function () {
           d="M1253,279.06c0,3-.28,6.94-3.28,6.94s-6.63-4.5-6.63-7.5a5.44,5.44,0,0,1,5.43-5.43C1251.55,273.07,1253,276.06,1253,279.06Z"
         />
       </g>
-      <g id="Group_B_Shapes" data-name="Group B Shapes">
+      <g id="group-b-shapes" data-name="Group B Shapes">
         <path
           className="topology topology--width-1 topology--color-5"
           d="M742.74,216.8c6.15-4.24,8.25-12.54,5.28-16.65-2.72-3.77-11.75-5.91-15.53-10-4.93-5.28-7.72-14.53-14.71-15.52s-15,4.59-15,14.61c0,8.09,6.74,17.67,14.51,23.36C723.44,217.1,735.3,221.91,742.74,216.8Z"
@@ -2377,7 +2382,7 @@ const Landscape = function () {
           d="M780.34,257.11c2.7,3.06,6,7.33,2.91,10s-7.92.94-10.61-2.11-5.29-7.3-2.24-10S777.65,254.05,780.34,257.11Z"
         />
       </g>
-      <g id="Group_C_Shapes" data-name="Group C Shapes">
+      <g id="group-c-shapes" data-name="Group C Shapes">
         <path
           className="topology topology--width-1 topology--color-5"
           d="M929.81,290.88c-8.09,1.06-13,11.31-5.08,17.61s12.06.46,20.35,5.48c6.94,4.21,8.59,15.5,20.08,16.18,13.31.78,16.7-12.66,8.87-20.87-6.15-6.47-11.48-.27-20.08-1.57C946,306.51,938.81,289.71,929.81,290.88Z"
@@ -2443,7 +2448,7 @@ const Landscape = function () {
           d="M805.81,290.61c1.7,1.92,3.75,4.61,1.83,6.3s-5,.59-6.67-1.33-3.33-4.59-1.41-6.28S804.12,288.69,805.81,290.61Z"
         />
       </g>
-      <g id="Group_A_Shapes" data-name="Group A Shapes">
+      <g ref={groupARef} id="group-a-shapes" data-name="Group A Shapes">
         <path
           className="topology topology--width-1 topology--color-5"
           d="M314.34,264.13c3.37-2.32,4.52-6.87,2.89-9.12-1.49-2.06-6.43-3.24-8.5-5.46-2.7-2.89-4.23-8-8.05-8.49s-8.22,2.51-8.2,8c0,4.43,3.69,9.68,7.95,12.8C303.77,264.29,310.27,266.93,314.34,264.13Z"

@@ -1,9 +1,10 @@
 import Topology from './Topology';
-import style from '../../styles/hero.module.css';
+
+import '../../styles/hero.css';
 
 const Hero = function () {
   return (
-    <section className={style.hero}>
+    <section className="hero">
       <Topology />
     </section>
   );
