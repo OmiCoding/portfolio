@@ -3,6 +3,7 @@ import { InitState } from './contextTypes';
 
 const AppContext = createContext<InitState>({
   device: '',
+  modal: false,
   initDevice: () => {},
 });
 

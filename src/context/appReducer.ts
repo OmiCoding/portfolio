@@ -1,5 +1,5 @@
 import { AppReducer } from './contextTypes';
-import { INIT_DEVICE } from './types';
+import { INIT_DEVICE, MODAL_ACTIVE } from './types';
 
 const appReducer: AppReducer = function (state, action) {
   switch (action.type) {
@@ -12,6 +12,11 @@ const appReducer: AppReducer = function (state, action) {
       return {
         ...state,
         device: action.data,
+      };
+    case MODAL_ACTIVE:
+      return {
+        ...state,
+        modal: !state.modal,
       };
     default:
       return {
