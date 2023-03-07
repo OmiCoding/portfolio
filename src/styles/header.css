@@ -3,5 +3,266 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: 100px;
+  z-index: 1;
+}
+
+.header-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-width: 1280px;
+}
+
+.logo-wrapper {
+  position: relative;
+  width: 60px;
   height: 60px;
+  z-index: 0;
+}
+
+.header__logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.header__logo--color {
+  width: 100%;
+  height: 100%;
+  fill: var(--bg-color-2);
+}
+
+.header__logo-link {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.header__nav {
+  display: flex;
+}
+
+.header__nav__list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.header__list__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__list__items:first-child {
+  margin-right: 1.5rem;
+}
+
+.header__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-1);
+  color: var(--text-color-1);
+  font-size: 0.9rem;
+  font-weight: var(--fnt-weight-2);
+  background-color: var(--bg-color-2);
+  padding: 0.55rem 1.2rem;
+  border-radius: 1.2rem;
+  transition: all ease 200ms;
+}
+
+.bc {
+  fill: var(--bg-color-1);
+  margin-right: 0.5rem;
+  transition: all ease 200ms;
+}
+
+.header__btn:hover {
+  color: #fff;
+  text-shadow: #f2eadf 0 0 1px;
+}
+
+.header__btn:hover > .bc > g > .bc {
+  fill: #fff;
+}
+
+.header__list__items:last-child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__social {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bg-color-2);
+  padding: 0 1.2rem;
+  border-radius: 20px;
+}
+
+.header__social-list {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 36px;
+  transition: all ease 200ms;
+}
+
+.header__social-list:hover > .header__social-icon {
+  color: #fff;
+  text-shadow: #f2eadf 0 0 1px;
+}
+
+.header__social-icon {
+  display: inline-block;
+  color: var(--text-color-1);
+  transition: all ease 200ms;
+}
+
+.header__social-icon > i {
+  font-size: 1.1rem;
+}
+
+.header__social-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all ease 200ms;
+}
+
+.header__nav__hb {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  z-index: 0;
+}
+
+.header__nav__hb-svg-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.header__nav__hb-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  z-index: 0;
+}
+
+.hb-group {
+  filter: url('#blur');
+}
+
+.hb-bg {
+  fill: var(--bg-color-2);
+}
+
+.bar-1,
+.bar-2,
+.bar-3 {
+  fill: var(--bg-color-1);
+}
+
+.header__nav__hb-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.header__hb-menu-wrapper {
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 100px);
+}
+
+@media screen and (min-width: 320px) {
+  .logo-wrapper {
+    margin-left: 1rem;
+  }
+
+  .header__nav__hb {
+    margin-right: 1rem;
+  }
+
+  .header__nav {
+    margin-right: 0.5rem;
+  }
+
+  .header__nav__list {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo-wrapper {
+    margin: 0;
+  }
+
+  .header__nav__hb {
+    display: none;
+    margin: 0;
+  }
+
+  .header__nav__list {
+    display: flex;
+  }
+
+  .header-wrapper {
+    min-width: 1280px;
+  }
+
+  .header__hb-menu-wrapper {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header-wrapper {
+    min-width: 1440px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .header-wrapper {
+    min-width: 1680px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .header-wrapper {
+    min-width: 1920px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
 }

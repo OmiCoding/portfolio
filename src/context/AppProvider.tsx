@@ -6,6 +6,7 @@ import { Action, InitDevice, InitState } from './contextTypes';
 const AppProvider: React.FC<Props> = function ({ children }) {
   const [state, dispatch] = useReducer<Reducer<InitState, Action>>(appReducer, {
     device: '',
+    modal: false,
     initDevice: () => {},
   });
 
@@ -20,11 +21,18 @@ const AppProvider: React.FC<Props> = function ({ children }) {
     [state.device],
   );
 
+  const modalActive = function () {
+    return dispatch({
+      type: 'MODAL_ACTIVE',
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
         ...state,
         initDevice,
+        modalActive,
       }}
     >
       {children}
