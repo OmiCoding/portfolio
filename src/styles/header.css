@@ -1,10 +1,9 @@
 .header {
   position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100px;
   z-index: 1;
+  background-color: var(--bg-color-1);
 }
 
 .header-wrapper {
@@ -200,10 +199,87 @@
   z-index: 1;
 }
 
-.header__hb-menu-wrapper {
+.header__hb-menu {
   position: absolute;
+  top: 100px;
+  left: 0;
   width: 100%;
-  height: calc(100vh - 100px);
+  background-color: var(--bg-color-1);
+  transition: all ease 400ms;
+  border-top: solid var(--bg-color-2) 3px;
+}
+
+.header__hb-menu-wrapper {
+  position: relative;
+}
+
+.header__hb-menu--active {
+  min-height: calc(100vh - 100px);
+  opacity: 1;
+  z-index: 10;
+}
+
+.header__hb-menu--closed {
+  height: 0;
+  opacity: 0;
+}
+
+.header__hb-menu__description-1 {
+  font-family: var(--font-2);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text-color-2);
+}
+
+.header__hb-menu-header-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0 auto;
+  width: min-content;
+}
+
+.header__hb-menu__header,
+.header__hb-menu__header-2 {
+  font-family: var(--font-3);
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-color-2);
+}
+
+.header__hb-menu__header-2 {
+  position: relative;
+  font-family: var(--font-2);
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.header__hb-menu__curly {
+  font-family: var(--font-2);
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0.2rem 0;
+}
+
+.header__hb-menu__icon {
+  position: absolute;
+  top: 0;
+  right: -45%;
+  display: inline-block;
+  margin-left: 2rem;
+  padding-top: 0.2rem;
+  line-height: 1;
+  color: var(--text-color-2);
+}
+
+.header__hb-menu__description-2 {
+  font-family: var(--font-3);
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--text-color-2);
 }
 
 @media screen and (min-width: 320px) {
@@ -221,6 +297,50 @@
 
   .header__nav__list {
     display: none;
+  }
+
+  .header__hb-menu__description-1 {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .header__hb-menu__header {
+    font-size: 2rem;
+  }
+
+  .header__hb-menu__header-2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header__hb-menu__description-1 {
+    font-size: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  .header__hb-menu__header {
+    font-size: 5rem;
+    margin-top: 1.5rem;
+  }
+
+  .header__hb-menu__header-2 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .header__hb-menu__icon {
+    margin-left: 2.5rem;
+  }
+
+  .header__hb-menu__description-2 {
+    font-size: 2rem;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2rem;
   }
 }
 

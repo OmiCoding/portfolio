@@ -6,15 +6,12 @@ import imgUrl from '../../assets/logo.png';
 import AppContext from '../../context/AppContext';
 
 import SocialMedia from './SocalMedia';
-import HBMenu from './HBMenu';
-
 import HbSvg from './HbSvg';
 import BriefCase from './BriefCase';
 import '../../styles/header.css';
 
 const Header = function () {
-  const [trigger, setTrigger] = useState(false);
-  const { modalActive } = useContext(AppContext);
+  const { modalActive, hb, hbActive } = useContext(AppContext);
 
   const handleClick = function () {
     if (modalActive) {
@@ -23,12 +20,14 @@ const Header = function () {
   };
 
   const handleHB = function () {
+    if (!hbActive) return;
+
     const tl = gsap.timeline({
       defaults: {
         ease: 'elastic.out(1, 1)',
       },
     });
-    if (!trigger) {
+    if (!hb) {
       tl.to('.bar-1', {
         width: 8,
       })
@@ -63,7 +62,7 @@ const Header = function () {
           },
           '<',
         );
-      setTrigger(true);
+      hbActive();
     } else {
       tl.to('.bar-1', {
         x: 0,
@@ -85,7 +84,7 @@ const Header = function () {
           opacity: 1,
         });
 
-      setTrigger(false);
+      hbActive();
     }
   };
 
@@ -116,7 +115,6 @@ const Header = function () {
               <button className="header__nav__hb-btn" onClick={handleHB} />
             </div>
           </nav>
-          <HBMenu />
         </div>
       </header>
     </>
