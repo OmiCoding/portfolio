@@ -1,0 +1,5 @@
+.bc {
+  fill: var(--bg-color-1);
+  margin-right: 0.5rem;
+  transition: all ease 200ms;
+}

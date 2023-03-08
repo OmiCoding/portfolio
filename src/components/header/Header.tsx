@@ -7,7 +7,7 @@ import AppContext from '../../context/AppContext';
 
 import SocialMedia from './SocalMedia';
 import HbSvg from './HbSvg';
-import BriefCase from './BriefCase';
+import BriefCase from '../general/BriefCase';
 import '../../styles/header.css';
 
 const Header = function () {

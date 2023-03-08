@@ -4,7 +4,7 @@ import AppContext from '../../context/AppContext';
 import Heading from '../modal/Heading';
 import Computer from '../modal/Computer';
 import List from '../modal/List';
-import SwitchPage from '../modal/SwitchPage';
+import Portfolio from '../modal/Portfolio';
 
 function HBMenu() {
   const { hb } = useContext(AppContext);
@@ -19,7 +19,7 @@ function HBMenu() {
         <Heading />
         <Computer />
         <List />
-        <SwitchPage />
+        <Portfolio />
       </div>
     </div>
   );
