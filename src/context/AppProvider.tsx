@@ -7,6 +7,7 @@ const AppProvider: React.FC<Props> = function ({ children }) {
   const [state, dispatch] = useReducer<Reducer<InitState, Action>>(appReducer, {
     device: '',
     modal: false,
+    hb: false,
     initDevice: () => {},
   });
 
@@ -27,12 +28,19 @@ const AppProvider: React.FC<Props> = function ({ children }) {
     });
   };
 
+  const hbActive = function () {
+    return dispatch({
+      type: 'HB_ACTIVE',
+    });
+  };
+
   return (
     <AppContext.Provider
       value={{
         ...state,
         initDevice,
         modalActive,
+        hbActive,
       }}
     >
       {children}

@@ -1,7 +1,16 @@
+@font-face {
+  font-family: 'Eskool-Regular';
+  src: local('Eskool-Regular'), local('Eskool Regular'),
+    url('../fonts/Eskool-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 html,
@@ -43,8 +52,14 @@ li {
   list-style: none;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   --font-1: 'Inter', sans-serif;
+  --font-2: 'Eskool-Regular', sans-serif;
+  --font-3: 'IBM Plex Sans', sans-serif;
   --fnt-weight-1: 400;
   --fnt-weight-2: 700;
   --text-color-1: #e8d5ba;

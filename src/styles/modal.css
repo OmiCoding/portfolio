@@ -1,0 +1,287 @@
+.modal__text-name {
+  font-family: var(--font-2);
+  font-weight: 400;
+  text-align: center;
+  color: var(--text-color-2);
+}
+
+.modal__head-wrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  margin: 0 auto;
+  width: min-content;
+}
+
+.modal__header,
+.modal__header-2 {
+  font-family: var(--font-3);
+  font-weight: 700;
+  text-align: center;
+  color: var(--text-color-2);
+}
+
+.modal__header-2 {
+  position: relative;
+  font-family: var(--font-2);
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.modal__curly {
+  font-family: var(--font-2);
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+  margin: 0.2rem 0;
+}
+
+.modal__icon {
+  position: absolute;
+  top: 0;
+  right: -45%;
+  display: inline-block;
+  margin-left: 2rem;
+  padding-top: 0.2rem;
+  line-height: 1;
+  color: var(--text-color-2);
+}
+
+.modal__description {
+  font-family: var(--font-3);
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 2rem 0;
+  color: var(--text-color-2);
+}
+
+.modal__person-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.modal__img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal__computer-wrap {
+  width: 665.48px;
+  height: 599.88px;
+  margin: 0 auto;
+}
+
+.modal__list-wrap {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.modal__location {
+  font-family: var(--font-3);
+  color: var(--text-color-2);
+  text-align: center;
+}
+
+.modal__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal__list-item {
+  position: relative;
+  font-family: var(--font-3);
+  color: var(--text-color-2);
+  width: 100%;
+}
+
+.modal__list-deco {
+  position: absolute;
+  top: 30%;
+  bottom: 25%;
+  left: -7%;
+
+  background-color: var(--bg-color-2);
+}
+
+.modal__switch-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__switch-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-2);
+  color: var(--text-color-2);
+  font-weight: 400;
+}
+
+.modal__switch-btn-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid var(--bg-color-2);
+  margin-left: 1.5rem;
+  background-color: var(--bg-color-1);
+  transition: all 300ms ease;
+}
+
+.modal__switch-btn-wrap:hover {
+  background-color: var(--bg-color-2);
+}
+
+.modal__switch-btn-wrap:hover > .modal__switch-btn {
+  color: var(--text-color-1);
+}
+
+.modal__switch-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 320px) {
+  .modal__text-name {
+    font-size: 1.5rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal__header {
+    font-size: 2rem;
+  }
+
+  .modal__header-2 {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .modal__person-wrap {
+    display: none;
+  }
+
+  .modal__computer-wrap {
+    width: 199.64px;
+    height: 179.96px;
+    opacity: 80%;
+  }
+
+  .modal__list-wrap {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal__location {
+    margin: 1rem 0;
+  }
+
+  .modal__list {
+    width: 70%;
+  }
+
+  .modal__list-item {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal__list-deco {
+    width: 7px;
+    height: 7px;
+    border-radius: 7px;
+  }
+
+  .modal__switch-wrap {
+    margin-bottom: 1.5rem;
+  }
+
+  .modal__switch-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 667px) {
+  .modal__list {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal__text-name {
+    font-size: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  .modal__header {
+    font-size: 5rem;
+    margin-top: 1.5rem;
+  }
+
+  .modal__header-2 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .modal__icon {
+    margin-left: 2.5rem;
+  }
+
+  .modal__computer-wrap {
+    width: 299.44px;
+    height: 269.93px;
+    margin: 1.5rem auto;
+  }
+
+  .modal__description {
+    font-size: 2rem;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  .modal__location {
+    font-size: 2rem;
+  }
+
+  .modal__list {
+    width: 60%;
+  }
+
+  .modal__list-item {
+    font-size: 1.5rem;
+  }
+
+  .modal__switch-wrap {
+    margin-bottom: 2rem;
+  }
+
+  .modal__switch-text {
+    font-size: 2rem;
+  }
+
+  .modal__switch-btn-wrap {
+    width: 60px;
+    height: 60px;
+  }
+}
