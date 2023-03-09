@@ -8,25 +8,28 @@ gsap.registerPlugin(MorphSVGPlugin);
 gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(MotionPathPlugin);
 
-const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
+const useAnimation = function (
+  device: string,
+  initAnim: boolean,
+  ref: RefObject<SVGSVGElement>,
+) {
   const tl = useRef<GSAPTimeline>();
 
   useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      // MotionPathHelper.create('#blob-2');
+    let ctx: any;
+    if (device === 'desktop' && initAnim) {
+      ctx = gsap.context(() => {
+        gsap.set('.sphere--lines-1', {
+          drawSVG: 0,
+        });
+        gsap.set('.sphere--lines-2', {
+          drawSVG: 0,
+        });
 
-      gsap.set('.sphere--lines-1', {
-        drawSVG: 0,
-      });
-      gsap.set('.sphere--lines-2', {
-        drawSVG: 0,
-      });
+        gsap.set('.sphere--lines-3', {
+          drawSVG: 0,
+        });
 
-      gsap.set('.sphere--lines-3', {
-        drawSVG: 0,
-      });
-
-      if (device === 'desktop') {
         tl.current = gsap.timeline();
 
         tl.current
@@ -329,11 +332,16 @@ const useAnimation = function (device: string, ref: RefObject<SVGSVGElement>) {
 
           return tl;
         }
-      }
-    }, ref);
+      }, ref);
+    }
 
-    return () => ctx.revert();
-  }, [device]);
+    return () => {
+      if (ctx) {
+        ctx.kill();
+        ctx.revert();
+      }
+    };
+  }, [device, initAnim]);
 };
 
 const upperBlob =

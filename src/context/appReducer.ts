@@ -15,6 +15,7 @@ const appReducer: AppReducer = function (state, action) {
           ...state,
           device: action.data,
           hb: false,
+          initAnim: true,
         };
       } else if (action.data === 'mobile') {
         return {
