@@ -1,11 +1,14 @@
 import { RefObject, useLayoutEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-const useLandAnim = function (device: string, ref: RefObject<SVGSVGElement>) {
+const useLandAnim = function (
+  initAnim: boolean,
+  ref: RefObject<SVGSVGElement>,
+) {
   const tl = useRef<GSAPTimeline>();
 
   useLayoutEffect(() => {
-    if (device === 'desktop') {
+    if (initAnim) {
       gsap.to('.svg-hills__landscape', {
         translateY: 28,
         duration: 3,
@@ -22,11 +25,11 @@ const useLandAnim = function (device: string, ref: RefObject<SVGSVGElement>) {
         duration: 5,
       });
     }
-  }, [device]);
+  }, [initAnim]);
 
   useLayoutEffect(() => {
     let ctx = gsap.context(() => {
-      if (device === 'desktop') {
+      if (initAnim) {
         tl.current = gsap
           .timeline({
             repeatDuration: 3,
@@ -78,7 +81,7 @@ const useLandAnim = function (device: string, ref: RefObject<SVGSVGElement>) {
       }
     }, ref);
     return () => ctx.revert();
-  }, [device]);
+  }, [initAnim]);
 };
 
 export default useLandAnim;
