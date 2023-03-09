@@ -8,12 +8,12 @@ import '../../../styles/hills.css';
 import '../../../styles/floats.css';
 
 const Landscape = function () {
-  const { device } = useContext(AppContext);
+  const { initAnim } = useContext(AppContext);
   const svgRef = useRef<SVGSVGElement>(null);
   const groupARef = useRef<SVGSVGElement>(null);
 
-  useLandAnim(device, svgRef);
-  useGroupAnim(device, groupARef);
+  useLandAnim(initAnim, svgRef);
+  useGroupAnim(initAnim, groupARef);
 
   return (
     <svg

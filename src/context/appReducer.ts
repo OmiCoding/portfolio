@@ -11,11 +11,18 @@ const appReducer: AppReducer = function (state, action) {
       }
 
       if (action.data === 'desktop') {
+        if (!state.initAnim) {
+          return {
+            ...state,
+            device: action.data,
+            hb: false,
+            initAnim: true,
+          };
+        }
         return {
           ...state,
           device: action.data,
           hb: false,
-          initAnim: true,
         };
       } else if (action.data === 'mobile') {
         return {

@@ -9,27 +9,25 @@ gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(MotionPathPlugin);
 
 const useAnimation = function (
-  device: string,
   initAnim: boolean,
   ref: RefObject<SVGSVGElement>,
 ) {
   const tl = useRef<GSAPTimeline>();
 
   useLayoutEffect(() => {
-    let ctx: any;
-    if (device === 'desktop' && initAnim) {
-      ctx = gsap.context(() => {
-        gsap.set('.sphere--lines-1', {
-          drawSVG: 0,
-        });
-        gsap.set('.sphere--lines-2', {
-          drawSVG: 0,
-        });
+    let ctx = gsap.context(() => {
+      gsap.set('.sphere--lines-1', {
+        drawSVG: 0,
+      });
+      gsap.set('.sphere--lines-2', {
+        drawSVG: 0,
+      });
 
-        gsap.set('.sphere--lines-3', {
-          drawSVG: 0,
-        });
+      gsap.set('.sphere--lines-3', {
+        drawSVG: 0,
+      });
 
+      if (initAnim) {
         tl.current = gsap.timeline();
 
         tl.current
@@ -68,7 +66,6 @@ const useAnimation = function (
           );
           return tl;
         }
-
         function morphHalves() {
           const tl = gsap.timeline();
           tl.to('#upper-blob', {
@@ -101,7 +98,6 @@ const useAnimation = function (
             );
           return tl;
         }
-
         function addLines() {
           const tl = gsap.timeline();
 
@@ -153,7 +149,6 @@ const useAnimation = function (
 
           return tl;
         }
-
         function splitHalves() {
           const tl = gsap.timeline({
             defaults: {
@@ -240,7 +235,6 @@ const useAnimation = function (
             );
           return tl;
         }
-
         function blobs() {
           const tl = gsap.timeline({
             defaults: {
@@ -332,15 +326,13 @@ const useAnimation = function (
 
           return tl;
         }
-      }, ref);
-    }
+      }
+    }, ref);
 
     return () => {
-      if (ctx) {
-        ctx.revert();
-      }
+      ctx.revert();
     };
-  }, [device, initAnim]);
+  }, [initAnim]);
 };
 
 const upperBlob =
