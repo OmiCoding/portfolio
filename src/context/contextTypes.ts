@@ -2,6 +2,7 @@ export interface InitState {
   device: '' | 'desktop' | 'mobile';
   modal: boolean;
   hb: boolean;
+  initAnim: boolean;
   initDevice: InitDevice;
   modalActive?: ModalActive;
   hbActive?: HBActive;
