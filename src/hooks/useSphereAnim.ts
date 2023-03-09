@@ -9,7 +9,6 @@ gsap.registerPlugin(DrawSVGPlugin);
 gsap.registerPlugin(MotionPathPlugin);
 
 const useAnimation = function (
-  device: string,
   initAnim: boolean,
   ref: RefObject<SVGSVGElement>,
 ) {

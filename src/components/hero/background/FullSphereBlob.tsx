@@ -5,10 +5,10 @@ import AppContext from '../../../context/AppContext';
 import useSphereAnim from '../../../hooks/useSphereAnim';
 
 const FullSphereBlob = function () {
-  const { device, initAnim } = useContext(AppContext);
+  const { initAnim } = useContext(AppContext);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useSphereAnim(device, initAnim, svgRef);
+  useSphereAnim(initAnim, svgRef);
 
   return (
     <>
