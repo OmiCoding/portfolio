@@ -347,6 +347,7 @@
 @media screen and (min-width: 1280px) {
   .logo-wrapper {
     margin: 0;
+    margin-left: 1rem;
   }
 
   .header__nav__hb {
