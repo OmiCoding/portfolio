@@ -214,6 +214,7 @@
 }
 
 .header__hb-menu--active {
+  display: block;
   min-height: calc(100vh - 100px);
   opacity: 1;
   z-index: 10;
@@ -222,6 +223,7 @@
 .header__hb-menu--closed {
   height: 0;
   opacity: 0;
+  display: none;
 }
 
 .header__hb-menu__description-1 {
