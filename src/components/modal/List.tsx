@@ -1,3 +1,5 @@
+import '../../styles/modal.css';
+
 const List = function () {
   return (
     <div className="modal__list-wrap">

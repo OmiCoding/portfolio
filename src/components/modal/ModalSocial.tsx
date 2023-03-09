@@ -2,6 +2,7 @@ import softwareImg from '../../assets/software-chip.svg';
 import BriefCase from '../general/BriefCase';
 
 import '../../styles/general.css';
+import resume from '../../assets/resume.pdf';
 
 function ModalSocial() {
   return (
@@ -20,6 +21,7 @@ function ModalSocial() {
             <a
               className="modal__social__list-link"
               href="https://linkedin.com/in/omar-estevez"
+              target="_blank"
             />
           </li>
           <li className="modal__social__list-item">
@@ -27,7 +29,8 @@ function ModalSocial() {
             <span>Resume</span>
             <a
               className="modal__social__list-link"
-              href="https://linkedin.com/in/omar-estevez"
+              href={resume}
+              target="_blank"
             />
           </li>
           <li className="modal__social__list-item">
@@ -36,6 +39,7 @@ function ModalSocial() {
             <a
               className="modal__social__list-link"
               href="https://twitter.com/digicoding"
+              target="_blank"
             />
           </li>
         </ul>

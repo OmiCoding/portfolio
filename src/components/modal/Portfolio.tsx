@@ -14,11 +14,13 @@ const Portfolio = function () {
             'Fullstack application where artists can share art content'
           }
           img={daazzllImg}
+          url={'https://daazzll.com'}
         />
         <PortfolioCard
           title={'Lock & Key Remedies'}
           description={'Fullstack e-commerce application'}
           img={lkremediesImg}
+          url={'https://lkremedies.com'}
         />
       </div>
       <div className="modal__flex-item-wrap">
@@ -28,6 +30,7 @@ const Portfolio = function () {
             'Shopify e-commerce application with customized theme and design'
           }
           img={mediumImg}
+          url={'https://mediumphormat.com'}
         />
       </div>
     </div>
