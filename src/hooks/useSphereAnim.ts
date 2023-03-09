@@ -337,7 +337,6 @@ const useAnimation = function (
 
     return () => {
       if (ctx) {
-        ctx.kill();
         ctx.revert();
       }
     };
