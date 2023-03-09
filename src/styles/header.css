@@ -350,6 +350,10 @@
     margin-left: 1rem;
   }
 
+  .header__nav {
+    margin-right: 1rem;
+  }
+
   .header__nav__hb {
     display: none;
     margin: 0;
