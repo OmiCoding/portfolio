@@ -21,12 +21,17 @@ function ModalSocial() {
             <a
               className="modal__social__list-link"
               href="https://linkedin.com/in/omar-estevez"
+              target="_blank"
             />
           </li>
           <li className="modal__social__list-item">
             <i className="modal__social__list-icon fa-solid fa-file-lines" />
             <span>Resume</span>
-            <a className="modal__social__list-link" href={resume} />
+            <a
+              className="modal__social__list-link"
+              href={resume}
+              target="_blank"
+            />
           </li>
           <li className="modal__social__list-item">
             <i className="modal__social__list-icon fa-brands fa-twitter" />
@@ -34,6 +39,7 @@ function ModalSocial() {
             <a
               className="modal__social__list-link"
               href="https://twitter.com/digicoding"
+              target="_blank"
             />
           </li>
         </ul>

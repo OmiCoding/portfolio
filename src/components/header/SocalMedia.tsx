@@ -11,6 +11,7 @@ const SocialMedia = function () {
           <a
             className="header__social-link"
             href="https://twitter.com/digicoding"
+            target="_blank"
           />
         </li>
         <li className="header__social-list">
@@ -20,6 +21,7 @@ const SocialMedia = function () {
           <a
             className="header__social-link"
             href="https://github.com/OmiCoding"
+            target="_blank"
           />
         </li>
         <li className="header__social-list">
@@ -29,6 +31,7 @@ const SocialMedia = function () {
           <a
             className="header__social-link"
             href="https://linkedin.com/in/omar-estevez"
+            target="_blank"
           />
         </li>
       </ul>
