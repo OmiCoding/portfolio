@@ -3,12 +3,17 @@ import { useContext, useRef } from 'react';
 import '../../../styles/sphere.css';
 import AppContext from '../../../context/AppContext';
 import useSphereAnim from '../../../hooks/useSphereAnim';
+import useGsapContext from '../../../hooks/useGsapContext';
+import useResetAnim from '../../../hooks/useResetAnim';
 
 const FullSphereBlob = function () {
   const { initAnim } = useContext(AppContext);
   const svgRef = useRef<SVGSVGElement>(null);
 
-  useSphereAnim(initAnim, svgRef);
+  const ctx = useGsapContext(svgRef);
+
+  useSphereAnim(ctx, initAnim);
+  useResetAnim(ctx);
 
   return (
     <>
