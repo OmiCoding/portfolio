@@ -287,7 +287,6 @@
 .header__statement {
   font-family: var(--font-2);
   font-weight: 500;
-  font-size: 1.3rem;
   position: absolute;
   bottom: 20%;
   left: 0;
@@ -396,12 +395,17 @@
 
   .header__statement {
     display: block;
+    font-size: 1.1rem;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .header-wrapper {
     min-width: 1440px;
+  }
+  .header__statement {
+    display: block;
+    font-size: 1.3rem;
   }
 }
 
