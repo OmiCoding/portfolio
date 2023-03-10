@@ -284,6 +284,22 @@
   color: var(--text-color-2);
 }
 
+.header__statement {
+  font-family: var(--font-2);
+  font-weight: 500;
+  font-size: 1.3rem;
+  position: absolute;
+  bottom: 20%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.header__statement > i {
+  font-size: 1.1rem;
+}
+
 @media screen and (min-width: 320px) {
   .logo-wrapper {
     margin-left: 1rem;
@@ -314,6 +330,10 @@
   .header__hb-menu__header-2 {
     font-size: 1.5rem;
     text-align: left;
+  }
+
+  .header__statement {
+    display: none;
   }
 }
 
@@ -371,6 +391,10 @@
   }
 
   .header__hb-menu-wrapper {
+    display: none;
+  }
+
+  .header__statement {
     display: none;
   }
 }
