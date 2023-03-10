@@ -395,7 +395,7 @@
   }
 
   .header__statement {
-    display: none;
+    display: block;
   }
 }
 
