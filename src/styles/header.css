@@ -367,6 +367,7 @@
 
   .header-wrapper {
     min-width: 1280px;
+    margin: 0 auto;
   }
 
   .header__hb-menu-wrapper {
