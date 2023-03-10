@@ -390,10 +390,6 @@
   z-index: 3;
 }
 
-.modal--active {
-  display: flex;
-}
-
 .modal--close {
   display: none;
 }
@@ -458,6 +454,10 @@
   }
 
   .modal__bg {
+    display: none;
+  }
+
+  .modal--active {
     display: none;
   }
 
@@ -627,7 +627,15 @@
 
 @media screen and (min-width: 1280px) {
   .modal__bg {
-    display: block;
+    display: flex;
+  }
+
+  .modal--active {
+    display: flex;
+  }
+
+  .modal--close {
+    display: none;
   }
 
   .modal__text-name {
