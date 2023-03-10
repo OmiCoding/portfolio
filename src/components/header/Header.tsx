@@ -117,7 +117,7 @@ const Header = function () {
           </nav>
         </div>
         <h2 className="header__statement">
-          No, this is not a template. This is all skills and tears.
+          No, this is not a template. This is all skill and tears.
           <i className="fa-solid fa-sparkles" />
         </h2>
       </header>
