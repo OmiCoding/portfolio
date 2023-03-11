@@ -121,8 +121,8 @@
 
 @media screen and (min-width: 1280px) and (min-height: 550px) and (max-width: 5000px) {
   .sphere {
-    top: 12%;
     display: block;
+    bottom: 25%;
   }
 }
 

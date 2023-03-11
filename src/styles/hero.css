@@ -29,7 +29,7 @@
   height: 100%;
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 0px) {
   .sphere-wrapper-mobile {
     display: none;
   }

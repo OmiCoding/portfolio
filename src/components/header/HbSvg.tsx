@@ -2,8 +2,8 @@ function HbSvg() {
   return (
     <svg
       className="header__nav__hb-svg"
-      width="60"
-      height="60"
+      width="60px"
+      height="60px"
       viewBox="0 0 60 60"
     >
       <defs>

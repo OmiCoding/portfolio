@@ -446,7 +446,7 @@
   color: var(--bg-color-1);
 }
 
-@media screen and (min-width: 320px) {
+@media screen and (min-width: 0px) {
   .modal__text-name {
     font-size: 1.5rem;
     margin-top: 3rem;
