@@ -113,13 +113,9 @@
 
 @media screen and (min-width: 0px) {
   .sphere {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 0px) {
-  .sphere {
-    display: none;
+    top: 0;
+    display: block;
+    margin: auto;
   }
 }
 

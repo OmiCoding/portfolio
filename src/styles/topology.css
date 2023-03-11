@@ -143,6 +143,7 @@
   }
 
   .svg-hills__landscape {
+    display: none;
     width: 1280px;
   }
 }
@@ -161,12 +162,14 @@
 
 @media screen and (min-height: 720px) {
   .svg-hills__landscape {
+    display: block;
     bottom: 0%;
   }
 }
 
 @media screen and (min-width: 1280px) {
   .svg-hills__landscape {
+    display: block;
     width: 100%;
   }
 
