@@ -8,7 +8,7 @@ const AppProvider: React.FC<Props> = function ({ children }) {
     device: '',
     modal: false,
     hb: false,
-    initAnim: false,
+    initAnim: true,
     initDevice: () => {},
   });
 
