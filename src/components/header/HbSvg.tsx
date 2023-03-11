@@ -8,7 +8,7 @@ function HbSvg() {
       xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <filter id="blur">
+        {/* <filter id="blur">
           <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
           <feColorMatrix
             in="blur"
@@ -19,7 +19,7 @@ function HbSvg() {
                     0 0 0 25 -15.5"
           />
           <feComposite in="SourceGraphic" in2="gooeyEffect" operator="atop" />
-        </filter>
+        </filter> */}
       </defs>
       <g className="hb-group">
         <rect className="hb-bg" x="0" width="60" height="60" rx="10" />
